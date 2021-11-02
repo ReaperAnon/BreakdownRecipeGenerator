@@ -85,7 +85,8 @@ namespace BreakdownRecipeGenerator.Config
         public List<FormLink<IKeywordGetter>> ExcludedCraftingStations = new()
         {
             Skyrim.Keyword.CraftingSmithingArmorTable,
-            Skyrim.Keyword.CraftingSmithingSharpeningWheel
+            Skyrim.Keyword.CraftingSmithingSharpeningWheel,
+            Dragonborn.Keyword.DLC2StaffEnchanter
         };
 
 
