@@ -92,7 +92,7 @@ namespace BreakdownRecipeGenerator
                 newRecipe.CreatedObjectCount = (ushort)yield;
 
                 // Set the keyword based on the component it produces.
-                if (producedItem.Equals(Skyrim.MiscItem.Leather01) || producedItem.Equals(Skyrim.MiscItem.LeatherStrips))
+                if (producedItem.Equals(Skyrim.MiscItem.Leather01) || producedItem.Equals(Skyrim.MiscItem.LeatherStrips) || producedItem.Equals(Skyrim.MiscItem.RuinsLinenPile01))
                     newRecipe.WorkbenchKeyword = Skyrim.Keyword.CraftingTanningRack.AsNullable();
                 else
                     newRecipe.WorkbenchKeyword = Skyrim.Keyword.CraftingSmelter.AsNullable();
