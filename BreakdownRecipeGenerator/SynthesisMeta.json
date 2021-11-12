@@ -1,0 +1,8 @@
+{
+  "Nickname": "BreakdownRecipeGenerator",
+  "Visibility": "Visible",
+  "OneLineDescription": "Generates breakdown recipes for every craftable item in the game.",
+  "LongDescription": "Generates breakdown recipes for every craftable item in the game. Additionally, it also supports user-defined breakdown recipes for any types of items.",
+  "PreferredAutoVersioning": "Default",
+  "RequiredMods": []
+}
