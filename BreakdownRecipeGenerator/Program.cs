@@ -107,6 +107,26 @@ namespace BreakdownRecipeGenerator
                 hasItemCondition.ComparisonValue = 0;
                 newRecipe.Conditions.Add(hasItemCondition);
 
+                //append an "isn't equipped or has more than one" pair of conditions
+                ConditionFloat hasItemUnEquippedCondition = new();
+                FunctionConditionData UnEquippedfunctionCondition = new();
+                UnEquippedfunctionCondition.Function = Condition.Function.GetEquipped;
+                UnEquippedfunctionCondition.ParameterOneRecord = requiredItems.Item.Item;
+                hasItemUnEquippedCondition.Data = UnEquippedfunctionCondition;
+                hasItemUnEquippedCondition.CompareOperator = CompareOperator.EqualTo;
+                hasItemUnEquippedCondition.Flags = hasItemUnEquippedCondition.Flags | Condition.Flag.OR;
+                hasItemUnEquippedCondition.ComparisonValue = 0;
+                newRecipe.Conditions.Add(hasItemUnEquippedCondition);
+
+                ConditionFloat hasMultipleItemCondition = new();
+                FunctionConditionData hasMultipleItemConditionfunctionCondition = new();
+                hasMultipleItemConditionfunctionCondition.Function = Condition.Function.GetItemCount;
+                hasMultipleItemConditionfunctionCondition.ParameterOneRecord = requiredItems.Item.Item;
+                hasMultipleItemCondition.Data = hasMultipleItemConditionfunctionCondition;
+                hasMultipleItemCondition.CompareOperator = CompareOperator.GreaterThan;
+                hasMultipleItemCondition.ComparisonValue = 1;
+                newRecipe.Conditions.Add(hasMultipleItemCondition); 
+
                 // Add any perk conditions items might have so you can't melt down items you don't have the perks to craft.
                 foreach(var condition in originalRecipe.Conditions)
                 {
